@@ -5,6 +5,7 @@ import (
 	"io/fs"
 	"log"
 	"os"
+	"fmt"
 	"path/filepath"
 	"sort"
 	"strings"
@@ -123,6 +124,12 @@ func main() {
 			"posts": posts,
 		})
 	})
+
+    r.GET("/ping", func(c *gin.Context) {
+        clientIP := c.ClientIP()
+        fmt.Println("Request from IP:", clientIP)
+        c.String(http.StatusOK, "pong")
+    })
 
 	// Single post route
 	r.GET("/blog/:postTitle", func(c *gin.Context) {
