@@ -129,6 +129,12 @@ func main() {
     r.GET("/ping", func(c *gin.Context) {
         clientIP := c.ClientIP()
         fmt.Println("Request from IP:", clientIP)
+
+        fmt.Println("Headers:")
+        for k, v := range c.Request.Header {
+            fmt.Printf("%s: %v\n", k, v)
+        }
+
         c.String(http.StatusOK, "pong")
     })
 
