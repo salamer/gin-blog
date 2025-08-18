@@ -135,7 +135,7 @@ func main() {
             fmt.Printf("%s: %v\n", k, v)
         }
 
-        c.String(http.StatusOK, "pong")
+        c.String(http.StatusOK, fmt.Sprintf("ping from %s", clientIP))
     })
 
 	// Single post route
