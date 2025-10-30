@@ -143,7 +143,7 @@ func main() {
 		postTitle := c.Param("postTitle")
 		posts, err := getPosts()
 		if err != nil {
-			c.JSON(500, gin.H{"error": "Failed to get posts"})
+			c.JSON(500, gin.H{"error": "Failed toww get posts"})
 			return
 		}
 
